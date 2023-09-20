@@ -1,5 +1,5 @@
 from data import CustomImageDataset
-from utils import load_weights, show_batch, show_images
+from utils import load_weights, show_batch, show_images, plot_loss, generate
 import torch
 from config import Config
 import torchvision.transforms as transforms
@@ -7,7 +7,7 @@ from config import Config
 from model import Generator, Discriminator
  
 
-if __name__=='main':
+if __name__ == '__main__':
     config = Config(image_size=64, channels=3, nz=100,
                     batch_size=128, lr=0.002, beta1=0.5, num_epochs=40)
 
@@ -19,7 +19,7 @@ if __name__=='main':
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),#changing the range from [0,1] to [-1,1]
     ])
 
-    data=CustomImageDataset("data",transform)
+    data=CustomImageDataset("data",transform,config=config)
     data_loader = torch.utils.data.DataLoader(data, batch_size=config.batch_size, shuffle=True, drop_last=True)
 
     netG = Generator(config).to(config.device)
@@ -45,7 +45,8 @@ if __name__=='main':
     num_epochs = 1
     netD.train()
     netG.train()
-    for epoch in range(num_epochs):
+    generate(netD,netG,1,config)
+    '''for epoch in range(num_epochs):
         for i, data in enumerate(data_loader, 0):
             # TRAINING DISCRIMINATOR REAL
             netD.zero_grad()
@@ -88,3 +89,5 @@ if __name__=='main':
 
             G_losses.append(errorG.item())
             D_losses.append(errorD.item())
+
+    '''

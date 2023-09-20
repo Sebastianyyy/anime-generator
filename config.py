@@ -2,7 +2,7 @@ import torch
 import os
 
 class Config():
-    def __init(self, image_size, channels, nz, batch_size, lr, beta1, num_epochs):
+    def __init__(self, image_size, channels, nz, batch_size, lr, beta1, num_epochs):
         self.image_size = image_size
         self.channels = channels
         self.nz = nz
