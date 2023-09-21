@@ -14,6 +14,15 @@ def show_images(images, nmax=64):
     ax.imshow(
         make_grid((images.detach()[:nmax])*0.5+0.5, nrow=8).permute(1, 2, 0))
     plt.show()
+    
+
+def save_images(images, nmax=64):
+    fig, ax = plt.subplots(figsize=(8, 8))
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.imshow(
+        make_grid((images.detach()[:nmax])*0.5+0.5, nrow=8).permute(1, 2, 0))
+    plt.savefig("anime.png")
 
 
 def show_batch(dl, nmax=64, number_of_batch=0):

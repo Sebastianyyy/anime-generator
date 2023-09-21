@@ -1,5 +1,5 @@
 from model import Generator, Discriminator
-from utils import load_weights, show_images, config
+from utils import load_weights, show_images, config,save_images
 import torch
 
 def generate(netD, netG, number_of_images, config):
@@ -11,9 +11,9 @@ def generate(netD, netG, number_of_images, config):
         fake = netG(noise)
         if config.device == 'cpu':
             fake = torch.Tensor.cpu(fake)
-        show_images(fake, number_of_images)
+        save_images(fake, number_of_images)
         
-number_of_images=16
+number_of_images=48
 
 netG = Generator(config).to(config.device)
 print(netG)
