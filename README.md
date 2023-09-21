@@ -12,6 +12,8 @@ The dataset used for this project is available at Kaggle and contains approximat
 The architecture of the Anime Generator is based on the research paper referenced in the last section. The core components of the architecture consist of a discriminator and a generator.
 
 The generator, as illustrated in the diagram below, is composed of convolutional layers and follows the principles outlined in the referenced paper.
+![architecture](https://github.com/Sebastianyyy/anime-generator/blob/main/images/architecture.png)
+
 
 The discriminator, on the other hand, is constructed in a manner almost opposite to the generator. It employs transposed convolutional layers and is designed to distinguish between real and generated images.
 
@@ -26,7 +28,13 @@ I can't provide all the specific hyperparameters used in the project, it's worth
 In the training phase, adjustments were made to the labels of real and fake examples. The values for real examples were experimented with, ranging from 1.0 to 0.9, 0.99, and 0.995, while the values for fake examples were modified from 0.0 to 0.1, 0.01, and 0.005. These adjustments were made iteratively until satisfactory results were achieved, taking into consideration the available GPU resources and the training progress.
 
 # Generation
-To generate random anime face, all you need (:D https://arxiv.org/abs/1706.03762)
+To generate random anime face, all you need (:D https://arxiv.org/abs/1706.03762) is set number_of_images and execute py generate.py
+Generated image has size of 64x64x3 , same as training examples. Not all generated examples are great, it is caused of not best trained model.
+# Generated example
+![anime-1-example](https://github.com/Sebastianyyy/anime-generator/blob/main/images/anime.png)
+
+# Generated 48 examples
+![anime-48-example](https://github.com/Sebastianyyy/anime-generator/blob/main/images/anime1.png)
 
 
 
