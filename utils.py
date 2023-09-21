@@ -39,12 +39,3 @@ def plot_loss(D_losses, G_losses):
     plt.show()
 
 
-def generate(netD,netG,number_of_images, config):
-    netD.eval()
-    netG.eval()
-    with torch.no_grad():
-        noise = torch.randn(number_of_images, config.nz, 1, 1).to(config.device)
-        fake = netG(noise)
-        if config.device=='cpu':
-            fake=torch.Tensor.cpu(fake)
-        show_images(fake,number_of_images)
