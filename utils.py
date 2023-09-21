@@ -1,6 +1,11 @@
 from torchvision.utils import make_grid
 import matplotlib.pyplot as plt
 import torch
+from config import Config
+
+config = Config(image_size=64, channels=3, nz=100,
+                batch_size=128, lr=0.002, beta1=0.5, num_epochs=40)
+
 
 def show_images(images, nmax=64):
     fig, ax = plt.subplots(figsize=(8, 8))
