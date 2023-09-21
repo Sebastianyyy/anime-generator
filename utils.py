@@ -22,7 +22,7 @@ def save_images(images, nmax=64):
     ax.set_yticks([])
     ax.imshow(
         make_grid((images.detach()[:nmax])*0.5+0.5, nrow=8).permute(1, 2, 0))
-    plt.savefig("anime.png")
+    plt.savefig("images/anime.png")
 
 
 def show_batch(dl, nmax=64, number_of_batch=0):
