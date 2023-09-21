@@ -11,11 +11,11 @@ The dataset used for this project is available at Kaggle and contains approximat
 # Architecture
 The architecture of the Anime Generator is based on the research paper referenced in the last section. The core components of the architecture consist of a discriminator and a generator.
 
-The generator, as illustrated in the diagram below, is composed of convolutional layers and follows the principles outlined in the referenced paper.
+The discriminator, as illustrated in the diagram below, is composed of convolutional layers and follows the principles outlined in the referenced paper. His work is to decide is image is fake or real.
 ![architecture](https://github.com/Sebastianyyy/anime-generator/blob/main/images/architecture.png)
 
 
-The discriminator, on the other hand, is constructed in a manner almost opposite to the generator. It employs transposed convolutional layers and is designed to distinguish between real and generated images.
+The generator, on the other hand, is constructed in a manner almost opposite to the generator. It employs transposed convolutional layers and is designed to generate similar examples to train data.
 
 Throughout the architecture, Batch Normalization layers and various activation functions such as ReLU, LeakyReLU, and Tanh have been incorporated, following the recommendations from the referenced research paper.
 
