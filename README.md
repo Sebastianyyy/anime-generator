@@ -40,7 +40,9 @@ Generated image has size of 64x64x3 , same as training examples. Not all generat
 
 # references
 https://arxiv.org/abs/1511.06434
+
 https://www.kaggle.com/datasets/soumikrakshit/anime-faces
+
 https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
 
 ReadMe was created with the help of chatgpt.
